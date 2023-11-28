@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speed Test</title>
+</head>
+<body>
+
+  <h1>Speed Test</h1>
+  <p id="result">Click the button to start the speed test.</p>
+
+  <button onclick="runSpeedTest()">Run Speed Test</button>
+
+  <script>
+    function runSpeedTest() {
+      var startTime = performance.now();
+
+      // Perform the task or load the resource you want to test
+      // For example, you can load an image, make an API request, etc.
+      // Replace the following line with your specific task or resource.
+      var img = new Image();
+      img.src = 'https://example.com/path/to/your/resource.jpg';
+
+      img.onload = function() {
+        var endTime = performance.now();
+        var duration = endTime - startTime;
+
+        document.getElementById('result').innerHTML = 'Speed test completed in ' + duration + ' milliseconds.';
+      };
+    }
+  </script>
+
+</body>
+</html>
